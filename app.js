@@ -12,7 +12,7 @@ let playerHP = 10;
 let goblinsDefeated = 0;
 const goblins = [
     {
-        name: 'Jimothy',
+        name: 'Jimothy The Destroyer of Worlds',
         goblinHP: 4
     },
     {
@@ -47,25 +47,29 @@ function displayGoblins() {
             goblinEl.addEventListener('click', () => {
       //player hit
                 if (Math.random() > .5) {
-                    goblins.goblinHP--;
+                    goblin.goblinHP--;
                     playerSprite.src = '#############';
-                    alert('you hit ' + goblins.name + '!!');
+                    alert('you hit ' + goblin.name + '!!');
                 } else {
                     alert('Oh noes you missed OwO!!');
                 }
                   //goblin hits
-                if (Math.random() < .33) {
+                if (Math.random() > .33) {
                     playerHP--;
-                    playerHealthBar.textContent = `You have ${playerHP} left!!`;
-                    alert(goblins.name + 'hit you!');
+                    playerHealthBar.textContent = `You have ${playerHP} HP left!!`;
+                    alert(goblin.name + ' hit you!');
                 } else {
-                    alert(goblins.name + 'missed!!');
+                    alert(goblin.name + ' missed!!');
                 }
                     //goblins defeated
-                if (goblins.goblinHP === 0) {
+                if (goblin.goblinHP === 0) {
                     goblinsDefeated++;
                     goblinKillCount.textContent = `You have defeated ${goblinsDefeated} goblins!`;
                 }
+                if (playerHP === 0) {
+                    alert('Game Over, Try Again!');
+                }
+                displayGoblins();
             });
         }
         goblinListEl.append(goblinEl);
