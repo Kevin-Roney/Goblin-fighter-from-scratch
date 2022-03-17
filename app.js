@@ -42,7 +42,7 @@ goblinAddButton.addEventListener('click', () => {
 function displayGoblins() {
     goblinListEl.textContent = '';
     for (let goblin of goblins) {
-        const goblinEl = renderGoblin(goblins);
+        const goblinEl = renderGoblin(goblin);
         if (goblin.goblinHP > 0) {
             goblinEl.addEventListener('click', () => {
       //player hit
@@ -68,7 +68,6 @@ function displayGoblins() {
                 }
             });
         }
-    
         goblinListEl.append(goblinEl);
     }
 }
