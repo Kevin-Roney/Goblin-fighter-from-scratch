@@ -57,3 +57,13 @@ goblinsEl.addEventListener('click', () => {
         goblinKillCount.textContent = `You have defeated ${goblinsDefeated} goblins!`;
     }
 });
+function displayGoblins() {
+    goblinsEl.textContent = '';
+    const goblinEl = renderGoblin(goblin);
+    for (let goblin of goblins) {
+        renderGoblin(goblin);
+        displayGoblins();
+    }
+    goblinsEl.append(goblinEl);
+}
+displayGoblins();
