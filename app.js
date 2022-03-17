@@ -12,7 +12,7 @@ const goblins = [
         goblinHP: 4
     },
     {
-        name: 'Doctor Garbage',
+        name: 'Doctor Stromboli',
         goblinHP: 2
     },
     {
@@ -24,3 +24,13 @@ const goblins = [
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+goblinAddButton.addEventListener('click', () => {
+    const randomEntryInt = Math.ceil(Math.random() * 999);
+    const newGoblin = {
+        name: goblinNameInput.value || `Goblin #${randomEntryInt}`,
+        goblinHP: Math.ceil(Math.random() * 5)
+    };
+    goblins.push(newGoblin);
+    displayGoblins();
+    
+});
