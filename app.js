@@ -48,7 +48,7 @@ function displayGoblins() {
       //player hit
                 if (Math.random() > .5) {
                     goblin.goblinHP--;
-                    playerSprite.src = '#############';
+                    playerSprite.src = './assets/after.png';
                     alert('you hit ' + goblin.name + '!!');
                 } else {
                     alert('Oh noes you missed OwO!!');
