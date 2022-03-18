@@ -38,14 +38,16 @@ goblinAddButton.addEventListener('click', () => {
     goblinNameInput.value = '';
     displayGoblins();
 });
-
+function resetImage(){
+    playerSprite.src = './assets/before.png';
+}
 function displayGoblins() {
     goblinListEl.textContent = '';
     for (let goblin of goblins) {
         const goblinEl = renderGoblin(goblin);
         if (goblin.goblinHP > 0 && playerHP > 0) {
             goblinEl.addEventListener('click', () => {
-      //player hit
+                resetImage();
                 if (Math.random() > .5) {
                     goblin.goblinHP--;
                     playerSprite.src = './assets/after.png';
@@ -73,6 +75,8 @@ function displayGoblins() {
             });
         }
         goblinListEl.append(goblinEl);
+        
     }
 }
+
 displayGoblins();
