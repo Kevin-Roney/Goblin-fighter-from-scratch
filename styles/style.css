@@ -36,9 +36,12 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     margin-bottom: calc(var(--footer-height));
-    background-image: url('/assets/background.png');
+    background: url('/assets/background.png') no-repeat center center fixed;
     background-size: 100%;
-    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 section {
@@ -61,7 +64,11 @@ header img {
     height: var(--header-height);
 }
 
-p {
+button {
+    background-color: red;
+}
+input {
+    background-color: aqua;
 }
 
 footer {
@@ -84,6 +91,7 @@ footer {
     border-radius: 60px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
+    margin-top: 20px;
 }
 #goblin-counter {
     background-image: linear-gradient(rgb(0, 9, 128), yellow, rgb(0, 23, 128));
@@ -93,9 +101,11 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 7px;
+    margin-left: 20px;
 }
 .gooblin {
     background-image: linear-gradient(to right, red , yellow);
+    background-color: red;
     border-radius: 25px;
     padding: 7px;
     text-shadow: 0 0 3px #6900be, 0 0 5px #ff00c8;
@@ -103,4 +113,8 @@ footer {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    transition-duration: 0.4s;
+}
+.gooblin:hover {
+    background: #ff00c8;
 }
