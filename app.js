@@ -53,7 +53,7 @@ function displayGoblins() {
                     playerSprite.src = './assets/after.png';
                     alert('you hit ' + goblin.name + '!!');
                 } else {
-                    alert('Oh noes you missed OwO!!');
+                    alert('Oh noes you missed!!');
                 }
                   //goblin hits
                 if (Math.random() > .33) {
