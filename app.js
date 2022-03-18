@@ -43,7 +43,7 @@ function displayGoblins() {
     goblinListEl.textContent = '';
     for (let goblin of goblins) {
         const goblinEl = renderGoblin(goblin);
-        if (goblin.goblinHP > 0) {
+        if (goblin.goblinHP > 0 && playerHP > 0) {
             goblinEl.addEventListener('click', () => {
       //player hit
                 if (Math.random() > .5) {
