@@ -13,24 +13,22 @@
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
-        </div>
-    </header>
     <main>
         <section class="goblin-counter-holder">
             <div id="goblin-counter">You Have Killed 0 Gooblins!</div>
         </section>
         <section id="sprite-and-hp-holder">
-            <div id="health-bar" class="">You have 10 HP left!!</div>
+            <div id="health-bar" class="hp">You have 10 HP left!!</div>
             <div id=>
                 <img id="sprite" src="./assets/before.png" alt="">
             </div>
         </section>
         <section id="goblin-holder">
             <div id="input-holder">
-                <input id="goblin-input"></input>
+                <form action="challenger">
+                    <input id="goblin-input"></input>
+                </form>
+                
                 <button id="add-goblin-button">Challenge</button>
             </div>
             <div id="goblin-list">
@@ -38,9 +36,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
-    </footer>
 
     <script type="module" src="./app.js"></script>
 </body>
